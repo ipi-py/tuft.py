@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "setuptools_scm[toml]>=3.4.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tuft"
+readme = "ReadMe.md"
+description = "A small high-level library for creating The Update Framework repositories."
+authors = [{name = "KOLANICH"}]
+classifiers = [
+	"Development Status :: 4 - Beta",
+	"Environment :: Other Environment",
+	"Intended Audience :: Developers",
+	"License :: Public Domain",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3 :: Only",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["tuf", "update", "framework"]
+license = {text = "Unlicense"}
+requires-python = ">=3.4"
+dynamic = ["version"]
+dependencies = [
+	"requests", # @ git+https://github.com/psf/requests.git
+	"requests-file", # @ git+https://github.com/dashea/requests-file.git
+	"securesystemslib", # @ git+https://github.com/secure-systems-lab/securesystemslib.git
+	"tuf", # @ git+https://github.com/theupdateframework/python-tuf.git
+	"transformerz" # @ git+https://github.com/KOLANICH-libs/transformerz.py.git
+]
+
+[project.urls]
+Homepage = "https://github.com/KOLANICH-libs/tuft.py"
+
+[tool.setuptools]
+zip-safe = true
+
+[tool.setuptools.packages.find]
+include = ["tuft", "tuft.*"]
+
+[tool.setuptools_scm]
